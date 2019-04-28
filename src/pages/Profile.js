@@ -20,6 +20,10 @@ export default class Profile extends Component {
         <ProfileHeader/>
       </View>
       <Tweet/>
+      <Tweet/>
+      <Tweet/>
+      <Tweet/>
+      <Tweet/>
     </ScrollView>
     
     )

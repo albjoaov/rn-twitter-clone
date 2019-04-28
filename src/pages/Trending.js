@@ -18,7 +18,7 @@ export default class Trending extends Component {
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Recife trends | </Text>
         <TouchableOpacity>
-          <Text style={styles.buttonTextTitle}>Change?</Text>
+          <Text style={styles.buttonText}>Change?</Text>
         </TouchableOpacity>
       </View>
 
@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignSelf: 'center', 
     textAlign: 'center',
+    alignItems: 'center',
     padding: 35
   },
 
@@ -95,12 +96,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     alignSelf: 'center', 
     textAlign: 'center',
-  },
-
-  buttonTextTitle: {
-    color: "#4BB0EE",
-    fontSize: 18,
-    marginTop: 7,
   },
 
   buttonText: {
