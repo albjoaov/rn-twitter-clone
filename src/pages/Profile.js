@@ -9,7 +9,7 @@ export default class Profile extends Component {
   static navigationOptions = () => ({
     title: "Profile",
     headerTintColor: '#4BB0EE',
-    headerTitleStyle: {alignSelf: 'center', textAlign: 'center', width: '85%'},
+    headerTitleStyle: {alignSelf: 'center', textAlign: 'center'},
   });
 
   render() {

@@ -11,10 +11,8 @@ export default class Feed extends Component {
 
   static navigationOptions = ({navigation}) => ({
     title: "Feed",
-
     headerTintColor: '#4BB0EE',
-
-    headerTitleStyle: {alignSelf: 'center', textAlign: 'center', width: '85%'},
+    headerTitleStyle: {alignSelf: 'center', textAlign: 'center'},
 
     headerRight: (
       <TouchableOpacity onPress={() => navigation.navigate("Trending")}>
