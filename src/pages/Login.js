@@ -3,50 +3,61 @@ import {
   StyleSheet, 
   Text, 
   View, 
-  TextInput, 
-  TouchableNativeFeedback, 
+  TextInput,
   TouchableOpacity,
   KeyboardAvoidingView
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-// import { TextInput } from 'react-native-gesture-handler';
+import { StackActions, NavigationActions } from 'react-navigation'
 
 export default class Login extends Component {
 
-  static navigationOptions = { 
+  static navigationOptions = {
     header: null
   }
-
-  state = {
-    username: '',
-  };
-
-  handleInputChange = (username) => {
-    this.setState({ username });
-  }
-
+  
   handleLogin = () => {
-    this.props.navigation.navigate('Feed')
+    this.props.navigation.navigate("Feed");
+
+    // this.navigateToTimeline();
   }
+
+  navigateToTimeline = () => {
+    const resetAction = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({routeName: 'Feed'})]
+    });
+
+    this.props.navigation.dispatch(resetAction);
+  };
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <KeyboardAvoidingView style={styles.container}>
         <View style={styles.content}>
-          <Icon name="Twitter" size={64} color="#4BB0EE" />
+          <Icon name="twitter" size={64} color="#4BB0EE" />
 
           <TextInput
             style={styles.input}
-            placeholder="Nome do usuário"
-            value={this.state.username}
-            onChangeText={this.handleInputChange}
+            placeholder="Type your email adress or username"
+            keyboardType="email-address"
           />
-
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            returnKeyType="go"
+            onSubmitEditing={this.handleLogin}
+            secureTextEntry={true}
+          />
           <TouchableOpacity style={styles.button} onPress={this.handleLogin}>
-            <Text styles={styles.buttonText}>Entrar</Text>
+              <Text style={styles.buttonText}> Log in </Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.forgotPassword} onPress={() => {}}>
+              <Text style={styles.forgotPasswordText}> Forgot your password? </Text>
+          </TouchableOpacity>
+
         </View>
       </KeyboardAvoidingView>
     );
@@ -54,6 +65,7 @@ export default class Login extends Component {
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: "#FFF"
@@ -73,7 +85,7 @@ const styles = StyleSheet.create({
     height: 44,
     paddingHorizontal: 15,
     alignSelf: "stretch",
-    marginTop: 30
+    marginTop: 15
   },
 
   button: {
@@ -89,6 +101,19 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#FFF",
     fontSize: 16,
-    fontWeight: "bold"
+  },
+
+  forgotPassword: {
+    height: 44,
+    alignSelf: "stretch",
+    marginTop: 10,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  forgotPasswordText: {
+    color: "#000",
+    fontSize: 16,
   }
+
 });
