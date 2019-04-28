@@ -20,7 +20,6 @@ export default class Login extends Component {
   
   handleLogin = () => {
     this.props.navigation.navigate("Feed");
-
     // this.navigateToTimeline();
   }
 
