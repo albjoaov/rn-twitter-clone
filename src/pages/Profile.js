@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
 
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import ProfileHeader from '../components/ProfileHeader'
 import Tweet from '../components/Tweet'
+import Entypo from 'react-native-vector-icons/Entypo';
+
 
 export default class Profile extends Component {
 
   static navigationOptions = () => ({
     title: "Profile",
     headerTintColor: '#4BB0EE',
-    headerTitleStyle: {alignSelf: 'center', textAlign: 'center'},
+
+    headerRight: (
+      <TouchableOpacity>
+        <Entypo
+        name="dots-three-vertical"
+        style = {{ marginRight: 20 }}
+        size={24}
+        color="#4BB0EE"
+        />
+      </TouchableOpacity>
+    ),
   });
 
   render() {
