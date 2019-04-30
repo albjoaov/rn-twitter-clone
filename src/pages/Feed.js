@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
 
   floatingButton: {
     borderWidth:1,
-    borderColor:'rgba(0,0,0,0.2)',
+    borderColor:'#999',
     alignItems:'center',
     justifyContent:'center',
     // position: 'absolute',                                          
