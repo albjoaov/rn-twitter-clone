@@ -37,10 +37,6 @@ export default class Feed extends Component {
     )
   });
 
-  handleNewTweet = () => {
-    this.props.navigation.navigate("NewTweet");
-  };
-
   render() {
     const {navigate} = this.props.navigation;
 

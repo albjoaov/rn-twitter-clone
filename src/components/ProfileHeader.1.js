@@ -16,12 +16,12 @@ export default class ProfileHeader extends Component {
     <View>
 
       <View>
-        <Image style={styles.image} source={require('../assets/capa-frase.jpg')}/>
+        <Image style={styles.image} source={require('../assets/capa-zeca.jpg')}/>
       </View>
       
       <View style={styles.container}>
         <View style={styles.headerButtonsContainer}>
-        <Image style={styles.avatar} source={require('../assets/icon-pericles.jpg')}/>
+          <Icon name="circle" size={72}></Icon>
           <View style={styles.headerButtons}>
             <TouchableOpacity style={styles.button}>
               <Text style={styles.textButtonHeader} >Edit profile</Text>
@@ -169,13 +169,6 @@ const styles = StyleSheet.create({
       color: "#4BB0EE",
       marginRight: 15,
     },
-
-    avatar: {
-    borderWidth:1,
-    width:70,
-    height:70,
-    borderRadius:100,
-    }
 
 
 
